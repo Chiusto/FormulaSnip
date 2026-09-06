@@ -1,0 +1,36 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+build/
+dist/
+*.spec
+
+# 虚拟环境
+.venv/
+venv/
+env/
+
+# 本地配置（可能包含 API key）
+config.json
+config.ini
+.env
+.env.*
+
+# 运行时产生的文件
+*.log
+*.tmp
+
+# IDE
+.idea/
+.vscode/
+*.swp
+
+# 系统
+Thumbs.db
+Desktop.ini
+.DS_Store
+
+# 打包产物
+*.exe
