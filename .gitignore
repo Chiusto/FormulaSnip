@@ -1,36 +1,84 @@
-# Python
+# ---------- Python ----------
 __pycache__/
 *.py[cod]
+*$py.class
+*.so
 *.egg-info/
 .eggs/
 build/
 dist/
+develop-eggs/
+downloads/
+sdist/
+wheels/
+pip-wheel-metadata/
+.installed.cfg
+MANIFEST
 *.spec
 
-# 虚拟环境
+# 测试 / 类型检查缓存
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+.coverage.*
+htmlcov/
+
+# ---------- 虚拟环境 ----------
 .venv/
 venv/
 env/
+ENV/
+.python-version
 
-# 本地配置（可能包含 API key）
+# ---------- 本地配置（可能含 API Key，切勿提交）----------
 config.json
 config.ini
+config.local.*
 .env
 .env.*
+!.env.example
+*.pem
+*.key
 
-# 运行时产生的文件
+# ---------- 运行时产物 ----------
 *.log
+logs/
 *.tmp
+*.bak
+*.swp
+*.swo
+*~
+.formulasnip/
 
-# IDE
+# ---------- 截图 / 临时图片 ----------
+screenshots/
+screenshot_*.png
+Snipaste_*.png
+*.bmp
+
+# ---------- IDE ----------
 .idea/
 .vscode/
-*.swp
+*.iml
+*.ipr
+*.iws
 
-# 系统
-Thumbs.db
-Desktop.ini
-.DS_Store
-
-# 打包产物
+# ---------- 打包产物 ----------
 *.exe
+*.msi
+*.app/
+*.dmg
+
+# ---------- 系统文件 ----------
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+.DS_Store
+.Spotlight-V100
+.Trashes
+
+# ---------- 其他 ----------
+.workbuddy/
+node_modules/
