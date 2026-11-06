@@ -116,11 +116,13 @@ class FormulaSnipController(QObject):
         app.setWindowIcon(icon)
         self.host.setWindowIcon(icon)
 
-        # 托盘
+        # 托盘（菜单顺序：截图识别 / 贴图 / 设置 / --- / 退出）
         self.tray = QSystemTrayIcon(icon, self.host)
         menu = QMenu()
         self.act_capture = menu.addAction("截图识别…")
         self.act_capture.triggered.connect(self.start_capture)
+        self.act_pin = menu.addAction("贴图")
+        self.act_pin.triggered.connect(self._on_pin_hotkey)
         menu.addAction("设置…", self.open_settings)
         menu.addSeparator()
         menu.addAction("退出", self._quit)
@@ -145,7 +147,7 @@ class FormulaSnipController(QObject):
         LOG.info("pin hotkey registered = %s (%s)",
                  self.pin_hotkey.registered, pin_name)
 
-        menu.addAction("贴图（%s）" % pin_name, self._on_pin_hotkey)
+        self.act_pin.setText("贴图（%s）" % pin_name)
         self.tray.setToolTip(
             f"{APP_NAME} v{__version__} —— {hk_name} 截屏识别 · {pin_name} 贴图")
 
